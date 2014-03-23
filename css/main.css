@@ -1,0 +1,592 @@
+body{
+	background: url(images/bg_body.jpg) repeat-x;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.blockMain{
+	background-color: #FFFFFF;
+	position: relative;
+	width: 100%;
+}
+.blockFooter{
+	position: relative;
+	width: 100%;
+}
+.wrapperHeader{
+	background: url(images/banner.png);
+	display: block;
+	height: 190px;
+	margin: 0 auto;
+	width: 960px;
+}
+.wrapperLoggin{
+	margin: 150px auto 0px;
+	width: 960px;
+}
+.wrapperMain{	
+	margin: 0 auto;
+	width: 960px;
+}
+.wrapperFooter{
+	margin: 20px auto;
+	width: 960px;
+}
+.blockMain2{
+	margin-top: 20px;
+}
+.navMenu,
+.listPres,
+.btnsGrupos{
+	overflow: hidden;
+	width: 100%;
+}
+.btnsGrupos li{
+	width: 60px;
+	font-size: 13px;
+	cursor: pointer;
+	border-radius: 3px;
+	float: left;
+	text-align: center;
+	margin-right: 4px;
+	line-height: 1.5;
+	color: #000;
+	background: #ededed;
+}
+.btnsGrupos li:first-child{
+	width: 115px;
+}
+.btnsGrupos li:last-child{
+	width: 130px;
+}  
+.puntero{
+	width: 22px;
+	height: 11px;
+	background: url(images/punta.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+.textHorario{
+	padding: 10px 0px;
+}
+.textHorario,
+.textTeams{
+	font-size: 13px;
+	color: #086328;
+}
+.textTeams img{
+	vertical-align: middle;
+}
+#blockCont2 .bordCol{
+	padding: 10px 5px;
+	border-radius: 4px; 
+	border: 1px solid #ddd;
+}
+#blockCont2 .btn-primary{
+	font-size: 13px;
+	padding: 5px;
+}
+.navMenu li:first-child{
+	border-left: none;
+}
+.navMenu li{
+	border-left: 2px solid #FFF;
+	float: left;
+	display: block;	
+	background-color: #ffdd0f;
+	text-align: center;
+	width: 25%;	
+}
+.navMenu li a:link, .navMenu li a:visited, .navMenu li a:active{	
+	font-weight: bold;
+	font-size: 14px;
+	color: #FFF;
+	line-height: 25px;
+	padding: 10px;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.navMenu li a:hover{
+	text-decoration: underline;
+}
+.navMenu li.disabled{
+	display: none;
+	background-color: #ffdd0f; 
+}
+.navMenu li.active{
+	background-color: #ff0505;
+}
+.blockCol1{
+	float: left;
+	width: 10%;
+}
+.blockCol2{
+	float: left;
+	width: 20%;
+}
+.blockCol3{
+	float: left;
+	width: 30%;
+}
+.blockCol4{
+	float: left;
+	width: 40%;
+}
+.blockCol5{
+	float: left;
+	width: 50%;
+}
+.blockCol6{
+	float: left;
+	width: 60%;
+}
+.blockCol7{
+	float: left;
+	width: 70%;
+}
+.blockCol8{
+	float: left;
+	width: 80%;
+}
+.blockCol9{
+	float: left;
+	width: 90%;
+}
+.blockCol10{
+	float: left;
+	margin-left: 8px;
+	width: 40.5%;	
+}
+.blockCol11{
+	float: left;
+	width: 54.5%;	
+}
+.blockCol12{
+	float: left;
+	width: 960px;	
+}
+.listConv{
+	overflow: hidden;
+	width: 100%;
+}
+.listConv li,
+.itRowTeam{
+	margin-bottom: 10px;
+}
+.itRowTeam2 .blockCol1{
+	font-size: 11px;
+}
+.itRowTeam2{
+	padding: 16px 0px;
+	border-bottom: 1px solid #ddd;
+}
+.itRowTeam2 .blockCol7{
+	font-size: 15px;
+	line-height: 20px;
+}
+.notBorder{
+	border: none;
+}
+.listConv h4{
+	color: #4a4a4a;
+	font: bold 14px/16px Verdana, Helvetica, sans-serif;
+	margin: 0px 0px 5px 0px;
+}
+.listConv .blockCol8{
+	padding-left: 2%;
+	width: 78%;
+}
+.listConv a:link, .listConv a:visited, .listConv a:active{
+	color: #666666;
+	text-decoration: none;
+}
+.listConv a:hover{
+	text-decoration: underline;
+}
+.subtitle{
+	color: #000000;
+	font: bold 18px/21px Verdana, Helvetica, sans-serif;
+	margin: 0px 0px 20px 0px;
+}
+.subtitle span{
+	font-size: 11px;
+	font-weight: normal;
+}
+.form-group {
+	margin: 0px 0px 10px 0px;
+}
+.control-label {
+	color: #4a4a4a;
+	display: block;
+	font: bold 13px/15px Verdana, Helvetica, sans-serif;
+	padding-top: 0px;
+	text-align: left;
+	padding: 2% 0%;	
+}
+.form-control {
+	border: 1px solid #ccc;
+	color: #4a4a4a;
+	font: 12px/15px Verdana, Helvetica, sans-serif;
+	padding: 1% 2%;
+	width: 80%;
+}
+.inptFind{
+	color: #4a4a4a;
+	font: 12px/18px Verdana, Helvetica, sans-serif;
+	float: left;
+	vertical-align: middle;
+	border: 1px solid #CCCCCC;
+	width: 74%;
+}
+.btnFind{
+	color: #ffffff;
+	background: #086328;
+	display: inline-block;
+	font-weight: 400;
+	font: 12px/15px Verdana, Helvetica, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 3px 5px;
+	margin: 0px;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	float: right;
+	-webkit-user-select: none;
+}
+.blockBanner{
+	text-align: center;
+	padding: 20px 0px;
+}
+.blockBanner2{
+	padding: 80px 0px 10px 0px;
+}
+.imgCenter{
+	text-align: center;
+}
+.vineta{
+	color: #000;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+.btn-primary{
+	color: #ffffff;
+	background: #086328;
+	display: inline-block;
+	font-weight: 400;
+	font: 12px/15px Verdana, Helvetica, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 10px;
+	margin: 0px;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+}
+.listUsersDisp{
+	margin: 20px 0px;
+}
+.listUsersDisp li{
+	margin-bottom: 5px;
+}
+.listUsersDisp input[type='checkbox']{
+	vertical-align: middle;
+}
+.listUsersDisp span{
+	vertical-align: middle;
+}
+.listFooter,
+.listUsersDisp{
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+.listFooter{
+	line-height: 20px;
+}
+.listFooter li{
+	float: left;
+	margin: 0px 40px 0px 0px;
+}
+.listFooter li a:link, .listFooter li a:visited, .listFooter li a:active{
+	color: #3BB63A;
+	font-weight: bold;
+	line-height: 12px;
+	padding: 0px 9px 0px 10px;
+	text-decoration: underline;
+}
+.listFooter li a:hover{
+	text-decoration: none;
+}
+.listFooter li.last{
+	float: right;
+	margin: 0px;
+}
+.lnkFutfan{
+	background: url(images/logo-futfan.png) no-repeat;
+	float: right;
+	margin-bottom: 10px;
+	height: 90px;
+	width: 90px;
+	display: block;
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+table th{
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: 2px solid #ddd;
+	padding: 8px;
+}
+table td{
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	padding: 8px;
+	text-align: center;
+}
+h2{
+	font-size: 18px;
+	line-height: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.blockMyData,
+#blockSelecRes{
+	margin: 20px 0px 40px 0px;
+}
+.blockMyData span{
+	background: url(images/acceso.png) no-repeat;
+	padding-left: 25px;
+	font: bold 14px/17px Verdana, Helvetica, sans-serif;
+	background-size: 20px;
+}
+.blockAllResults{
+	margin: 40px 0px;
+}
+.lnk1:link, .lnk1:visited, .lnk1:active{
+	color: #000ccc;
+	font-size: 11px;
+	line-height: 17px;
+	font-style: italic;
+	text-decoration: underline;
+}
+.lnk2:link, .lnk2:visited, .lnk2:active{
+	color: #000ccc;
+	text-decoration: underline;
+	float: right;
+}
+.lnk1:hover,
+.lnk2:hover{
+	text-decoration: none;
+}
+#tblPuntaje{
+	width: 280px;
+}
+#tblPuntaje td{
+	text-align: left;
+}
+.blockFancybox{
+	position: relative;
+}
+.blockInformation{
+	position: absolute;
+	font-size: 11px;	
+	bottom: 5px;
+	right: 0;
+	width: 340px;
+}
+.blockPosit{
+	background: url(images/posit.png) no-repeat;
+	float: left;
+	height: 291px;
+	padding: 0px 40px;
+	width: 231px;
+}
+.blockPosit h3{
+	font: bold 16px/19px Verdana, Helvetica, sans-serif;
+	text-align: center;
+	margin: 80px 0px 10px 0px;
+}
+.msgBlock1{
+	display: block;
+	margin: 20px 0px;
+	text-align: justify;
+}
+.msgBlock2{
+	display: block;
+	margin: 20px auto;
+	width: 300px;
+}
+.countdown{
+	border: 1px solid #ccc;
+	background-color: #eee;
+	display: block;
+	padding: 10px;
+}
+.listGroups{
+	background-color: #0b90d4;
+	overflow: hidden;
+	width: 100%;
+}
+.listGroups li{
+	height: 66px;
+}
+.listGroups small{
+	color: #ffffff;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 8px;
+}
+.listGroups span{
+	color: #ffffff;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.itCountry{
+	float: left;
+	font: 10px/12px Verdana, Helvetica, sans-serif;
+	height: 50px;
+	width: 25%;
+	text-align: center;
+	padding: 8px 0px;
+}
+.itCountry img{
+	display: block;
+	margin: 0 auto;
+}
+.blockCountry{
+	background-color: #f4f1f3;
+}
+#blockSelec{
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 40px;
+}
+.blockPadding{
+	padding-left: 2%;
+	width: 18%;
+}
+.first{
+	color: #000;
+	font-size: 12px;
+	display: block;
+	float: left;
+	margin-bottom: 8px;
+	width: 30%;
+}
+.second{
+	color: #000;
+	font-size: 12px;
+	display: block;
+	float: left;
+	margin-bottom: 8px;
+	width: 70%;
+}
+.alert{
+	color: red;
+}
+#blockBtn .btn-primary{
+	float: right;
+	margin: 10px 0px;
+}
+#blockPag{
+	margin-top: 10px;
+}
+.pagination{
+	display: inline-block;
+	padding-left: 0;
+	margin: 10px 0;
+	border-radius: 4px;
+}
+.pagination li{
+	display: inline;
+}
+.pagination li a{
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	text-decoration: none;
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	margin-left: -1px;
+}
+.pagination li:last-child a{
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.pagination li:first-child a{
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+#blockDisplayRes{
+	margin: 20px 0px;
+}
+#tblPredic{
+	border: 2px solid #ddd;
+	margin-top: 45px;
+}
+#tblPredic td{
+	text-align: left;
+}
+#tblResult01{
+	border: 2px solid #ddd;
+}
+.paddCol7{
+	float: left;
+	padding-right: 2%;
+	width: 68%;
+}
+.headerIframe textarea{
+	border: 1px solid #CCCCCC;
+	color: #4a4a4a;
+	font: 12px/18px Verdana, Helvetica, sans-serif;
+	margin: 70px 20px 10px 25px;
+	height: 120px;
+	width: 200px;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+

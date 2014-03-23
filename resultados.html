@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>	
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Mundialito</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="blockHeader">
+		<div class="wrapperHeader"></div>		
+	</div>
+	<div class="blockMain2">
+		<div class="wrapperMain clearfix">
+			<!--<div class="blockCol1">&nbsp;</div>-->
+			<div class="blockCol12">
+				<div class="blockNav">
+					<ul class="navMenu">
+						<li><a href="index.php">Home</a></li>	
+						<li class="active"><a href="#">Resultados</a></li>	
+						<li><a href="cachitas.php">Cachitas</a></li>	
+						<li class="disabled"><a href="predicciones.php">Predicciones</a></li>	
+					</ul>
+				</div>
+				<div class="blockMyData clearfix">
+					<span>David Augusto Thornberry Blanc</span>
+					<a href="#" class="lnk1">No eres tú</a>
+					<a href="#" id="fancyRules" class="lnk2">Reglas</a>
+				</div>
+				<div class="blockMyResult clearfix" style="position: relative;">
+					<ul class="btnsGrupos">
+					  <li class="btnOff" id="0">Mis Equipos</li>
+			          <li class="btnOff" id="1">A</li>
+			          <li class="btnOff" id="2">B</li>
+			          <li class="btnOff" id="3">C</li>
+			          <li class="btnOff" id="4">D</li>
+			          <li class="btnOff" id="5">E</li>
+			          <li class="btnOff" id="6">F</li>
+			          <li class="btnOff" id="7">G</li>
+			          <li class="btnOff btnOn" id="8">H</li>
+			          <li class="btnOff" id="9">Fase Eliminatoria</li>
+			        </ul>
+			        <div class="puntero" style="display: block; left: 52px;"></div>
+			        <div id="blockDisplayRes">
+			        	<div id="blockCont1" class="clearfix">
+			        		<div class="blockCol7 paddCol7">
+			        			<table id="tblResult01">
+			        				<thead>
+			        					<tr>
+			        						<th></th>
+			        						<th colspan="5">Puntos por Partido</th>
+			        					</tr>
+			        					<tr>
+			        						<th>Equipos</th>
+			        						<th>Fecha 1</th>
+			        						<th>Fecha 2</th>
+			        						<th>Fecha 3</th>
+			        						<th>Fase Eliminatoria</th>
+			        						<th>Total por Equipo</th>	
+			        					</tr>			        					
+			        				</thead>
+			        				<tbody>
+			        					<tr>
+			        						<td>Equipo 1</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 2</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 3</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 4</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 5</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 6</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 7</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Equipo 8</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>TOTAL POR RONDA</td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        						<td></td>
+			        					</tr>
+			        				</tbody>
+			        			</table>
+			        		</div>
+			        		<div class="blockCol3">
+			        			<table id="tblPredic">
+			        				<thead>
+			        					<tr>
+			        						<th colspan="2">PUNTOS POR PREDICCIONES</th>
+			        					</tr>	
+			        				</thead>	
+			        				<tbody>
+			        					<tr>
+			        						<td>Octavos de Final</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Cuartos de Final</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Semifinal</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Final</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Tercer Puesto</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>Campeón</td>
+			        						<td></td>
+			        					</tr>
+			        					<tr>
+			        						<td>TOTAL POR PREDICCIONES</td>
+			        						<td></td>
+			        					</tr>
+			        				</tbody>
+			        			</table>
+			        		</div>
+			        	</div>
+			        	<br><br>
+			        	<div id="blockCont2" class="clearfix">
+			        		<div class="blockCol11 bordCol">
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>República de Corea</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>Croacia</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>Croacia</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>Croacia</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>Croacia</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        			<div class="itRowTeam clearfix">
+			        				<div class="blockCol3 textHorario">
+				        				12/06 - 17:00
+				        			</div>
+				        			<div class="blockCol7 textTeams">
+				        				<img src="Flags/Brazil.png">
+				        				<span>Brasil</span>
+				        				<a class="btn-primary btnFancRes fancybox.iframe" href="iframeCachitas.html">Cachita</a>
+				        				<span>Croacia</span>
+				        				<img src="Flags/Croatia.png">
+				        			</div>			        				
+			        			</div>
+			        		</div>
+			        		<div class="blockCol10 bordCol">
+			        			<div class="itRowTeam2 clearfix">
+			        				<div class="blockCol3">Posiciones</div>
+			        				<div class="blockCol1 alert">Pts.</div>
+			        				<div class="blockCol1">Gan.</div>
+			        				<div class="blockCol1">Emp.</div>
+			        				<div class="blockCol1">Per.</div>
+			        				<div class="blockCol1">GF.</div>
+			        				<div class="blockCol1">GC.</div>
+			        				<div class="blockCol1">Dif.</div>
+			        			</div>
+			        			<div class="itRowTeam2 clearfix">
+			        				<div class="blockCol3">República de Corea</div>
+			        				<div class="blockCol1 alert">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        			</div>
+			        			<div class="itRowTeam2 clearfix">
+			        				<div class="blockCol3">Camerún</div>
+			        				<div class="blockCol1 alert">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        			</div>
+			        			<div class="itRowTeam2 clearfix">
+			        				<div class="blockCol3">Croacia</div>
+			        				<div class="blockCol1 alert">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        			</div>
+			        			<div class="itRowTeam2 clearfix notBorder">
+			        				<div class="blockCol3">México</div>
+			        				<div class="blockCol1 alert">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        				<div class="blockCol1">0</div>
+			        			</div>
+			        		</div>
+			        	</div>	
+			        </div>
+				</div>
+			</div>
+			<!--<div class="blockCol1">&nbsp;</div>-->
+		</div>
+	</div>
+	<div class="blockFooter">
+		<div class="wrapperFooter">
+			<ul class="listFooter">
+<li>© Derechos Reservados, 2014, VIRTUAL ENTERTAINMENT NETWORK SAC
+</li>	
+<li><a href="#">Términos y Condiciones</a></li>
+<li class="last">Mail de contacto: contacto@futfan.pe</li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery-1.7.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+   	<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+   	<script src="js/jquery.plugin.js"></script>
+   	<script src="js/jquery.countdown.js"></script>
+    <script src="js/custom.js"></script>  
+</body>
+</html>
