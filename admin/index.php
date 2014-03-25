@@ -32,7 +32,7 @@
         <br>
         <input type="password" id="txtPassword" class="form-control" placeholder="Password">
         <br>
-        <input type="button" class="btn btn-lg btn-primary btn-block" id="btnEnviar" value="Enviar">        
+        <input type="button" class="btn btn-lg btn-primary btn-block" id="btnEnviar" value="Ingresar">        
       </form>
 
     </div> <!-- /container -->

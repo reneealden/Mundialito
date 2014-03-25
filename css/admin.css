@@ -7,15 +7,18 @@
 	margin: 0 auto;
 }
 .form-data {
-	max-width: 500px;
+	max-width: 400px;
 	margin: 0 auto;
+}
+.form-signin-heading{
+  margin-bottom: 30px;
 }
 .jumbotron {
   text-align: center;
   background-color: transparent;
 }
 .jumbotron .btn {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
@@ -88,4 +91,7 @@
 
 .hideForm{
 	display: none;
+}
+.blockResImg{
+  padding: 10px 0px;
 }

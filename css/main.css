@@ -371,6 +371,9 @@ h2{
 #blockSelecRes{
 	margin: 20px 0px 40px 0px;
 }
+#blockSelecRes{
+	z-index: 15;
+}
 .blockMyData span{
 	background: url(images/acceso.png) no-repeat;
 	padding-left: 25px;
@@ -484,6 +487,7 @@ h2{
 	overflow: hidden;
 	width: 100%;
 	margin-bottom: 40px;
+	z-index: 10;
 }
 .blockPadding{
 	padding-left: 2%;

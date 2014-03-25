@@ -42,22 +42,28 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <form id="formFirst" class="form-signin">
+        <form id="formFirst" class="form-data">
             <h2 class="form-signin-heading">Datos de la Empresa</h2>
             <input type="text" id="txtCompany" class="form-control" placeholder="Nombre de la Empresa" autofocus>
             <br>
             <label>Banner de la Empresa</label>
-            <button id="btnUploadImg" class="btn btn-primary btn-sm">Select</button>
-            <div class="blockResImg"></div>
-            <br>
-            <input type="button" class="btn btn-primary btn-block btn-sm" id="btnSaveComp" value="Enviar">
+            <button id="btnUploadImg" class="btn btn-primary btn-xs">Select</button>
+            <div class="blockResImg hideForm"></div>
+            <div class="blockError hideForm"></div>
+            <br><br>
+            <input type="hidden" id="inptImage">
+            <input type="button" class="btn btn-primary btn-sm" id="btnSaveComp" value="Enviar">
         </form>
 
-        <form id="formThird" class="hideForm form-signin" method="post" enctype="multipart/form-data">
-            <h2>Subir Usuarios al sistema</h2>
-             <input type="file" id="fileUsers">
-            <br>
-            <input type="button" class="btn btn-lg btn-primary btn-block" id="btnSaveComp" value="Enviar">  
+        <form id="formThird" class="hideForm form-data" method="post" enctype="multipart/form-data">
+            <h2 class="form-signin-heading">Subir Usuarios al sistema</h2>
+            <label>Listado de usuarios</label>
+            <button id="btnUploadCvs" class="btn btn-primary btn-xs">Select</button>
+            <div class="blockResExcel hideForm"></div>
+            <div class="blockErrorExcel hideForm"></div>
+            <br><br>
+            <input type="hidden" id="inptExcel">
+            <input type="button" class="btn btn-lg btn-primary" id="btnSaveUsers" value="Enviar">  
         </form>
       </div>      
 
@@ -76,9 +82,9 @@
     </div> <!-- /container -->
 
     <script id="archivoTemplate" type="text/html">
-    <div class="menu-item">
-        <a class="filename" href="${ruta}" target="_blank">${name}</a>
-        <a class="remove" href="#" onClick="removeFile(this,'${name}'); return false;">Remove</a>
+    <div class="row menuItem">
+        <a class="col-md-9" href="${ruta}" target="_blank">${name}</a>
+        <a class="col-md-3" href="#" onClick="removeFile(this,'${nameServer}','${flag}'); return false;">Remove</a>
     </div>
     </script>
     <!-- Bootstrap core JavaScript

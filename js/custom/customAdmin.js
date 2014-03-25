@@ -2,7 +2,7 @@ $(document).ready(function($) {
 	
 	$('#btnEnviar').click(function(event) {
 		/* Act on the event */
-		var objJson = JSON.stringify( { cmd: { email: $('#txtEmail').val(), password: $('#txtPassword').val() }, mod: 'Login' } );
+		var objJson = JSON.stringify( { cmd: { email: $('#txtEmail').val(), password: $('#txtPassword').val() }, mod: 'LoginAdmin' } );
 	
 		$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
@@ -18,12 +18,31 @@ $(document).ready(function($) {
 		
 		if( $('#txtCompany').val() != undefined && $('#txtCompany').val() != '' ){
 
-			var objJson = JSON.stringify( { cmd: { nameCompany: $('#txtCompany').val() }, mod: 'SaveNameCompany' } );
-
+			var objJson = JSON.stringify( { cmd: { nameCompany: $('#txtCompany').val(), nameImageCompany: $('#inptImage').val() }, mod: 'SaveNameCompany' } );
+			
 			$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
 				/*optional stuff to do after success */
 				$('#txtCompany').val('')
 				$('.blockResImg').empty();
+			});
+		}
+	});
+
+	$('#btnSaveUsers').click(function(event) {
+		/* Act on the event */
+		if( $('#inptExcel').val() != '' ){
+			var objJson = JSON.stringify( { cmd: { nameFile: $('#inptExcel').val() }, mod: 'SaveUsersCsv' } );
+			
+			$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
+				/*optional stuff to do after success */
+				var objRes = $.parseJSON(data);
+							
+				if( objRes.success.message == 'ok' ){
+					$('.blockResExcel').empty();
+					$('.blockResExcel').hide();
+					$('.blockErrorExcel').text('Datos Guardados correctamente');
+					$('.blockErrorExcel').show().delay(3000).fadeOut();
+				}
 			});
 		}
 	});
@@ -33,9 +52,79 @@ $(document).ready(function($) {
 		var $id = $(this).attr('id');
 		$('form').hide();
 		$('#form'+$id).show();
- 			
+		$('#navAdmin li').each( function(index) {
+			 /* iterate through array or object */
+			 $('#navAdmin li:eq('+index+')').removeClass('active');
+		});
+
+ 		$(this).parent('li').addClass('active');	
 
 		event.preventDefault();
+	});
+
+	new AjaxUpload('#btnUploadCvs', {
+        action: '../uploadFile/uploadExcel.php',
+		onSubmit : function(file , ext){
+			console.log(ext)
+			if (! (ext && /^(csv|xls|xlsx|)$/.test(ext))){
+				// extensiones permitidas
+				$(".blockErrorExcel").text("Only format csv !");
+				$(".blockErrorExcel").show().delay(3000).fadeOut();
+
+				// cancela upload
+				return false;
+			} else {
+				if($(".blockErrorExcel").is(":visible"))
+				{
+					$(".blockErrorExcel").fadeOut("slow");
+				}
+				$('.blockResExcel').show();
+				$('#btnUploadCvs').text('Uploading...');
+				this.disable();
+			}
+		},
+		onComplete: function(file, response){
+			$('#btnUploadCvs').text('Select');
+			// enable upload button
+			this.enable();
+
+			var res;
+			try {
+				res = jQuery.parseJSON(response);
+			} catch( err ) {
+				res = {success: false};
+			}
+
+			if( res.success )
+			{
+				var ext = file.substr(file.lastIndexOf('.') + 1);
+				
+				var format = [];
+				format['docx'] = 'doc';
+				format['xlsx'] = 'xls';
+				format['pptx'] = 'ppt';
+				format['jpeg'] = 'jpg';
+
+				var file_icon = format[ext] || (ext.match(/csv/)!=null ? ext : 'unknown');
+				
+				// Agrega archivo a la lista
+				var data = { 
+					ruta: res.ruta,
+					name: file.replace(/[^\.\w]/g,''),
+					nameServer: res.filename,
+					flag: 'C'
+				};
+
+				$('#inptExcel').val(data.nameServer);
+				// Agregamos a la lista
+				$("#archivoTemplate").tmpl(data).appendTo(".blockResExcel");
+			}
+			else
+			{
+				alert('No se pudo subir el archivo.');
+			}
+
+		} // onComplete
 	});
 
 
@@ -43,18 +132,19 @@ $(document).ready(function($) {
 	new AjaxUpload('#btnUploadImg' , {
         action: '../uploadFile/uploadImage.php',
 		onSubmit : function(file , ext){
-			if (! (ext && /^(jpg|png|jpeg|gif|pdf|xls|xlsx|doc|docx|ppt|pptx)$/.test(ext))){
+			if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
 				// extensiones permitidas
-				$("#msn-error").text("Only format png, jpg, gif, pdf, xls, doc and ppt !");
-				$("#msn-error").fadeIn("slow");
+				$(".blockError").text("Only format png, jpg, gif !");
+				$(".blockError").show().delay(3000).fadeOut();
 
 				// cancela upload
 				return false;
 			} else {
-				if($("#msn-error").is(":visible"))
+				if($(".blockError").is(":visible"))
 				{
-					$("#msn-error").fadeOut("slow");
+					$(".blockError").fadeOut("slow");
 				}
+				$('.blockResImg').show();
 				$('#btnUploadImg').text('Uploading...');
 				this.disable();
 			}
@@ -81,17 +171,18 @@ $(document).ready(function($) {
 				format['pptx'] = 'ppt';
 				format['jpeg'] = 'jpg';
 
-				var file_icon = format[ext] || (ext.match(/jpg|png|gif|pdf|xls|doc|ppt/)!=null ? ext : 'unknown');
+				var file_icon = format[ext] || (ext.match(/jpg|png|gif/)!=null ? ext : 'unknown');
 				
 				// Agrega archivo a la lista
 				var data = { 
-					ruta:res.ruta,
-					name:file.replace(/[^\.\w]/g,''),
-					nameServer: res.filename
+					ruta: res.ruta,
+					name: file.replace(/[^\.\w]/g,''),
+					nameServer: res.filename,
+					flag: 'I'
 				};
 
 				$('#included_files').show();
-
+				$('#inptImage').val(data.nameServer);
 				// Agregamos a la lista
 				$("#archivoTemplate").tmpl(data).appendTo(".blockResImg");
 			}
@@ -103,6 +194,22 @@ $(document).ready(function($) {
 		} // onComplete
 	});
 
+	
 
 });
 
+function removeFile( elem, name, flag ){
+	var $divParent = $(elem).parent('.menuItem');
+
+	if( name != '' ){
+		var objJson = JSON.stringify( { cmd: { nameImage: name, flag: flag }, mod: 'deleteImage' } );
+
+		$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
+			/*optional stuff to do after success */
+			var objRes = $.parseJSON(data);
+			if( objRes.flag == 'ok' ){
+				$divParent.remove();
+			}
+		});
+	}
+}
