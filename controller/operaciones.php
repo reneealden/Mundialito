@@ -88,6 +88,20 @@
 
 				$response = json_encode(array('success'=>$result));
 			break;
+
+			/* CFER */
+			case 'LoadCompany':				
+				$company = new Company();
+
+				$result = $company->LoadCompanyAll();
+				
+				if( $result['message'] == 'ok' ){
+					print_r("entro");
+				}
+
+				//$response = json_encode(array('success'=>$result));
+			break;			
+			/* --- */
 		}
 
 		echo $response;

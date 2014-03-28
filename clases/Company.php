@@ -1,5 +1,6 @@
 <?php
 include_once 'DB.php';
+include('crud/mysql_crud.php');
 
 class Company{
 	private $objSendResp;
@@ -44,5 +45,17 @@ class Company{
 
 		return $objSendResp;
 	}
+
+	/* CFER */
+	public function LoadCompanyAll(){		
+		$db = new Database();
+		$db->connect();
+		$db->select('empresa','id,nombrelargo,nombrecorto,email,estado',NULL,NULL,'id DESC'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+		$res = $db->getResult();
+		print_r($res);
+
+		return array('message' => 'ok');
+	}	
+	/* --- */
 }
 ?>

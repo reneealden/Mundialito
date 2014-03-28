@@ -41,7 +41,7 @@
       </div>
 
       <!-- Jumbotron -->
-      <div class="jumbotron">
+      <div class=""> <!-- Jumbotron muy pequeño -->
         <form id="formFirst" class="form-data">
             <h2 class="form-signin-heading">Datos de la Empresa</h2>
             <input type="text" id="txtCompany" class="form-control" placeholder="Nombre de la Empresa" autofocus>
@@ -65,7 +65,119 @@
             <input type="hidden" id="inptExcel">
             <input type="button" class="btn btn-lg btn-primary" id="btnSaveUsers" value="Enviar">  
         </form>
+
+        <!-- CFER -->
+        <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+   
+                  <div class="modal-header">
+                      <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                      <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                  </div>
+                  <div class="modal-body">
+                      <h4>Text in a modal</h4>
+                      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="btn-group">
+                      <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                      <button class="btn btn-primary">Save changes</button>
+                  </div>
+                  </div>
+   
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dalog -->
+        </div><!-- /.modal -->
+
+        <div class="tableContainer">         
+          <div class="well">            
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title text-left"><i class="glyphicon glyphicon-th"></i> Empresas</h3>
+                <div class="pull-right">                  
+                  <div class="btn-group btn-group-sm" style="margin-top:-7px;">                    
+                    <button type="button" class="btn btn-info clickable filter">
+                      <span class="glyphicon glyphicon-search"></span> Buscar
+                    </button>
+                    <button type="button" id="btn-listar" class="btn btn-info" data-toggle="modal" href="#myModal">
+                      <span class="glyphicon glyphicon-plus"></span> Añadir
+                    </button>
+                  </div>                  
+                </div>
+              </div>
+              <div class="panel-body">
+                <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+              </div>
+              <table class="table table-hover" id="dev-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>kilgore</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Kilgore</td>
+                    <td>Trout</td>
+                    <td>kilgore</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-info btn-xs">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                      </a> 
+                      <a class="btn btn-danger btn-xs" href="#">
+                        <span class="glyphicon glyphicon-remove"></span> Del
+                        </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>Loblaw</td>
+                    <td>boblahblah</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-info btn-xs">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                      </a> 
+                      <a class="btn btn-danger btn-xs" href="#">
+                        <span class="glyphicon glyphicon-remove"></span> Del
+                        </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Holden</td>
+                    <td>Caulfield</td>
+                    <td>penceyreject</td>
+                    <td class="text-center">
+                      <a href="#" class="btn btn-info btn-xs">
+                        <span class="glyphicon glyphicon-edit"></span> Edit
+                      </a> 
+                      <a class="btn btn-danger btn-xs" href="#">
+                        <span class="glyphicon glyphicon-remove"></span> Del
+                        </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>              
+            </div>    
+            <ul class="pagination" style="margin:-10px 0;">
+              <li><a href="#">&laquo;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>        
+          </div>                           
+        </div>
       </div>      
+      <!-- END CFER -->       
 
       <!-- Site footer -->
       <div class="footer">
@@ -73,6 +185,7 @@
       </div>
 
         <script src="../js/libs/jquery-1.7.min.js"></script>
+        <script src="../js/libs/bootstrap.min.js"></script>
         <script src="../js/libs/json.js"></script>
         <script src="../js/libs/base64.js"></script>
         <script src="../js/libs/jquery.tmpl.min.js"></script>

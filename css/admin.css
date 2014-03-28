@@ -15,10 +15,7 @@
 }
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-}
-.jumbotron .btn {
-  font-size: 15px;
+  background-color: transparent;  
 }
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
@@ -95,3 +92,47 @@
 .blockResImg{
   padding: 10px 0px;
 }
+
+/* CFER */
+.row{
+    margin-top:40px;
+    padding: 0 10px;
+}
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading div {
+  margin-top: -18px;
+  font-size: 15px;
+}
+.panel-heading div span{
+  margin-left:5px;
+}
+.panel-body{
+  display: none;
+}
+
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
+}
+/* END CFER*/

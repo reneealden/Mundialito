@@ -1,8 +1,8 @@
 $(document).ready(function($) {
 	
-	$('#btnEnviar').click(function(event) {
+	$('#btn-login').click(function(event) {
 		/* Act on the event */
-		var objJson = JSON.stringify( { cmd: { email: $('#txtEmail').val(), password: $('#txtPassword').val() }, mod: 'LoginAdmin' } );
+		var objJson = JSON.stringify( { cmd: { email: $('#login-username').val(), password: $('#login-password').val() }, mod: 'LoginAdmin' } );
 	
 		$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
 			/*optional stuff to do after success */
@@ -12,6 +12,12 @@ $(document).ready(function($) {
 			}
 		});
 		
+	});
+
+	$('#btn-refresh').click(function(event) {
+		/* Act on the event */
+		$('#login-username').val("");
+		$('#login-password').val("");		
 	});
 
 	$('#btnSaveComp').click(function(){
@@ -45,6 +51,24 @@ $(document).ready(function($) {
 				}
 			});
 		}
+	});
+
+	$('#btn-listar').click(function(event) {
+		/* Act on the event */
+		
+			var objJson = JSON.stringify( { cmd: { nameFile: 'nada' }, mod: 'LoadCompany' } );
+			
+			$.post('../controller/operaciones.php',{ json: $.base64.encode( objJson ) }, function(data, textStatus, xhr) {
+				/*optional stuff to do after success */
+				/*var objRes = $.parseJSON(data);
+							
+				if( objRes.success.message == 'ok' ){
+					$('.blockResExcel').empty();
+					$('.blockResExcel').hide();
+					$('.blockErrorExcel').text('Datos Guardados correctamente');
+					$('.blockErrorExcel').show().delay(3000).fadeOut();
+				}*/
+			});		
 	});
 
 	$('#navAdmin li a').click(function(event) {
@@ -194,7 +218,51 @@ $(document).ready(function($) {
 		} // onComplete
 	});
 
+	/* CFER */
+	(function(){
+	    'use strict';
+		var $ = jQuery;
+		$.fn.extend({
+			filterTable: function(){
+				return this.each(function(){
+					$(this).on('keyup', function(e){
+						$('.filterTable_no_results').remove();
+						var $this = $(this), search = $this.val().toLowerCase(), target = $this.attr('data-filters'), $target = $(target), $rows = $target.find('tbody tr');
+						if(search == '') {
+							$rows.show(); 
+						} else {
+							$rows.each(function(){
+								var $this = $(this);
+								$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+							})
+							if($target.find('tbody tr:visible').size() === 0) {
+								var col_count = $target.find('tr').first().find('td').size();
+								var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
+								$target.find('tbody').append(no_results);
+							}
+						}
+					});
+				});
+			}
+		});
+		$('[data-action="filter"]').filterTable();
+	})(jQuery);
+
+	$('[data-action="filter"]').filterTable();
+		
+	$('.tableContainer').on('click', '.panel-heading button.filter', function(e){		
+		var $this = $(this), 
+				$panel = $this.parents('.panel');
+		
+		$panel.find('.panel-body').slideToggle();
+		if($this.css('display') != 'none') {
+			$panel.find('.panel-body input').focus();
+		}
+	});
 	
+	//$('[data-toggle="tooltip"]').tooltip();	
+	
+	/* END CFER*/
 
 });
 
@@ -213,3 +281,4 @@ function removeFile( elem, name, flag ){
 		});
 	}
 }
+
